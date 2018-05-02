@@ -73,6 +73,7 @@ JavaScript
     >>> d[nan]
     'banana'
     >>> nan === nan
+    false
 
 Again, somehow you can correctly insert and get a value out of an object using
 a `NaN` key. However...
