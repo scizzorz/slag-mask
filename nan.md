@@ -25,8 +25,8 @@ Python
     >>> nan == nan
     False
 
-Somehow, you can correctly insert and get a value out of a dict using a `NaN`
-key, despite `NaN` not being equal to itself. However...
+Somehow, you can correctly insert and retrieve a value out of a dict using a
+`NaN` key, despite `NaN` not being equal to itself. However...
 
     #!python
     >>> nan2 = float('nan')
@@ -75,8 +75,8 @@ JavaScript
     >>> nan === nan
     false
 
-Again, somehow you can correctly insert and get a value out of an object using
-a `NaN` key. However...
+Again, somehow you can correctly insert and retrieve a value out of an object
+using a `NaN` key. However...
 
     #!javascript
     >>> nan2 = 0/0
@@ -91,8 +91,8 @@ both of these `NaN`s get turned into `'NaN'`:
     >>> d['NaN']
     'banana'
 
-Less neat, but it's more intuitive than Python's implementation, which makes it
-less likely to cause hard-to-find bugs.
+Less neat, but it's more intuitive than Python's implementation, which makes
+hard-to-find bugs less likely.
 
 Lua
 ---
@@ -111,6 +111,6 @@ Mask
 I haven't quite decided yet, but I'm leaning towards using the
 [ordered-float](https://rust-bio.github.io/rust-bio/ordered_float/struct.OrderedFloat.html)
 crate, which contradicts the IEEE standard and adds the reflexive property back
-into `NaN`s. This would provide similar behavior to JS regarding `NaN`, but
-would avoid some of the nasty consequences of stringifying all keys.
+into `NaN`s. This would provide intuitive behavior like JS, but would avoid
+some of the nasty consequences of stringifying all keys.
 
