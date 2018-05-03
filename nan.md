@@ -46,7 +46,7 @@ Because `nan` is the same object as `nan`, the identity check passes and the
 dict lookup succeeds. Because `nan2` is a different object, the identity check
 fails, and lookup moves to the equality check. Because `NaN` is not equal to
 itself, the equality check also fails, and the lookup aborts with a `KeyError`.
-This means that we can use *both* `NaN` objects as keys successfully.
+This means that we can use *both* `NaN` objects as distinct keys.
 
     #!python
     >>> d[nan2] = 'apple'
